@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryPal Privacy Policy</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+        }
+        h1 { font-size: 1.8em; margin-bottom: 4px; }
+        h2 { font-size: 1.3em; margin-top: 32px; border-bottom: 1px solid #e0e0e0; padding-bottom: 6px; }
+        h3 { font-size: 1.05em; margin-top: 20px; }
+        ul { padding-left: 24px; }
+        li { margin-bottom: 6px; }
+        a { color: #1a73e8; }
+        .updated { color: #666; font-size: 0.95em; margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+    <h1>PantryPal Privacy Policy</h1>
+    <p class="updated"><strong>Last updated:</strong> February 13, 2026</p>
+
+    <h2>Introduction</h2>
+    <p>PantryPal ("we", "our", "the app") is a pantry management and recipe generation application for Android. This privacy policy explains how we collect, use, and protect your information.</p>
+
+    <h2>Information We Collect</h2>
+
+    <h3>Google Account Data</h3>
+    <p>When you sign in with Google, we receive:</p>
+    <ul>
+        <li><strong>Display name</strong> &mdash; shown in the app UI</li>
+        <li><strong>Email address</strong> &mdash; used as your unique account identifier</li>
+        <li><strong>Google ID token</strong> &mdash; used to authenticate API requests (not stored permanently)</li>
+    </ul>
+    <p>We do not access your Google contacts, calendar, or any other Google account data.</p>
+
+    <h3>Pantry Items</h3>
+    <p>You manually enter pantry item data (food names, categories, quantities, expiration dates). This data is:</p>
+    <ul>
+        <li>Stored locally on your device in an encrypted database</li>
+        <li>Sent to our backend server when you request recipe generation</li>
+    </ul>
+
+    <h3>Camera &amp; Barcode Data</h3>
+    <p>The app uses your device camera solely to scan product barcodes. Camera frames are processed on-device by ML Kit and are never transmitted to any server. Scanned barcodes are used to look up product information via the Open Food Facts API.</p>
+
+    <h3>Usage Data</h3>
+    <p>We track recipe generation counts per user to enforce usage limits. This data is stored in our backend database.</p>
+
+    <h2>Third-Party Services</h2>
+
+    <h3>OpenAI</h3>
+    <p>When you generate recipes, your pantry item names, categories, and expiration status are sent to our backend, which forwards them to OpenAI's API (gpt-4o-mini) to generate recipes. OpenAI's data usage policy applies to this processing. We do not send your name, email, or any personal identifiers to OpenAI.</p>
+
+    <h3>Open Food Facts</h3>
+    <p>When you scan a barcode, the barcode number is sent to the Open Food Facts API to retrieve product information (name, category). Open Food Facts is an open, collaborative database. No personal information is sent with barcode lookups.</p>
+
+    <h3>Google Sign-In</h3>
+    <p>Authentication is handled via Google's Credential Manager. Google's privacy policy applies to the sign-in process.</p>
+
+    <h2>Data Storage &amp; Retention</h2>
+    <ul>
+        <li><strong>Local data</strong> (pantry items, saved recipes): Stored on your device using Android Room database. Deleted when you uninstall the app or clear app data.</li>
+        <li><strong>Backend data</strong> (user usage tracking): Stored in AWS DynamoDB. Associated with your Google account ID (a hashed identifier, not your email). Retained as long as your account is active.</li>
+        <li><strong>Recipe generation data</strong>: Not stored after the response is returned. Recipes are only saved locally if you explicitly bookmark them.</li>
+    </ul>
+
+    <h2>Data Security</h2>
+    <ul>
+        <li>All network communication uses HTTPS/TLS encryption</li>
+        <li>API requests are authenticated via Google ID tokens validated at the API Gateway layer</li>
+        <li>Backend infrastructure runs on AWS with industry-standard security practices</li>
+        <li>No passwords are stored &mdash; authentication is delegated to Google</li>
+    </ul>
+
+    <h2>Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+        <li><strong>Access</strong> your data: All pantry and recipe data is visible in the app</li>
+        <li><strong>Delete</strong> your data: Uninstall the app to remove all local data. Contact us to request deletion of backend data.</li>
+        <li><strong>Opt out</strong>: You can stop using the app at any time. No data is collected when the app is not in use.</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>PantryPal is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. We will notify users of significant changes through the app or via the email associated with their account.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions about this privacy policy or your data, please contact us at:</p>
+    <p><strong>Email:</strong> <a href="mailto:licatasoftware@gmail.com">licatasoftware@gmail.com</a></p>
+</body>
+</html>
